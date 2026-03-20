@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seityl-website
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - seityl-network
+
+  # Cloudflare Tunnel service
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: seityl-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - seityl-network
+    depends_on:
+      - website
+
+networks:
+  seityl-network:
+    driver: bridge

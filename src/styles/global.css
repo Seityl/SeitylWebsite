@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-white font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #4B3CFA 0%, #2F5BFF 100%);
+  }
+}
+
+/* Grid background pattern */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(75, 60, 250, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(75, 60, 250, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Subtle glow effect */
+.glow-line {
+  background: linear-gradient(90deg, transparent 0%, rgba(75, 60, 250, 0.15) 50%, transparent 100%);
+}
+
+/* Vertical glow line */
+.glow-line-vertical {
+  background: linear-gradient(180deg, transparent 0%, rgba(75, 60, 250, 0.1) 50%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

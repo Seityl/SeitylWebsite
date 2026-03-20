@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  website:
+    image: 192.168.1.201:5000/seityl-website:latest
+    container_name: seityl-website
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    networks:
+      - seityl-network
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: seityl-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - seityl-network
+    depends_on:
+      - website
+
+networks:
+  seityl-network:
+    driver: bridge

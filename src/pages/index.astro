@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FutureStatement from '../components/FutureStatement.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const schemaOrgData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "SEITYL",
+  "url": "https://seityl.com",
+  "logo": "https://seityl.com/favicon.svg",
+  "description": "Autonomous infrastructure systems for logistics, trade, and enterprise.",
+  "sameAs": []
+};
+---
+
+<Layout>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrgData)} />
+  </Fragment>
+  <Header />
+  <main>
+    <Hero />
+    <FutureStatement />
+  </main>
+  <Footer />
+</Layout>

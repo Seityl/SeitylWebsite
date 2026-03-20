@@ -1,0 +1,75 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center px-6 lg:px-8">
+  <!-- Subtle geometric accent -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <!-- Accent line -->
+    <div class="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent"></div>
+    <!-- Accent dot pattern -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square opacity-[0.02]" aria-hidden="true">
+      <svg viewBox="0 0 100 100" class="w-full h-full" aria-hidden="true">
+        <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="0.5" fill="currentColor"/>
+        </pattern>
+        <rect width="100" height="100" fill="url(#dots)"/>
+      </svg>
+    </div>
+  </div>
+  
+  <div class="relative max-w-5xl mx-auto text-center">
+    <!-- Small label -->
+    <p class="text-xs uppercase tracking-extra-wide text-neutral-300 mb-8">
+      Infrastructure Systems
+    </p>
+    
+    <!-- Main headline -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1.1] mb-8 px-4">
+      <span class="block">Systems that exist</span>
+      <span class="block text-neutral-100">to operate.</span>
+    </h1>
+    
+    <!-- Subtext -->
+    <p class="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto mb-6 leading-relaxed">
+      Autonomous infrastructure for logistics, trade, and enterprise.
+    </p>
+    
+    <!-- Philosophy nod -->
+    <p class="text-xs text-neutral-300 tracking-widest uppercase mb-12">
+      From seity — self-existent being
+    </p>
+    
+    <!-- CTA -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a 
+        href="mailto:contact@seityl.com" 
+        class="group inline-flex items-center gap-3 px-8 py-4 bg-white text-background font-medium text-sm tracking-wide hover:ring-2 hover:ring-accent hover:ring-offset-2 hover:ring-offset-background focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background transition-all duration-200"
+      >
+        Start a Project
+        <svg 
+          class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Scroll indicator illustration -->
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-50" aria-hidden="true">
+    <svg class="w-6 h-10 text-neutral-300" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <!-- Vertical shaft -->
+      <line x1="12" y1="4" x2="12" y2="28"/>
+      <!-- Top node -->
+      <circle cx="12" cy="4" r="2"/>
+      <!-- Middle nodes -->
+      <circle cx="12" cy="12" r="1.5"/>
+      <circle cx="12" cy="20" r="1.5"/>
+      <!-- Arrow head -->
+      <path d="M7 28l5 7 5-7"/>
+    </svg>
+  </div>
+</section>
